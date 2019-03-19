@@ -64,3 +64,11 @@ function generateMarkup(album, callback)
     callback();
 
 }
+
+function changeLgPhoto(href, title)
+{
+    var lgImage = document.getElementById("lgImage");
+    var lgImageTitle = document.getElementById("lgImageTitle");
+    lgImage.src = href;
+    lgImageTitle.innerText = title;
+}

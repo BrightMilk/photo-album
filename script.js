@@ -65,6 +65,24 @@ function generateMarkup(album, callback)
 
 }
 
+function listenEvents()
+{
+    var photos = document.getElementsByClassName("album__navbar")[0];
+    photos.onclick = function(event)
+    {
+        var target = event.target;
+        while (target != this)
+        {
+            if (target.nodeName == 'A') 
+            {
+                changeLgPhoto(target.href, target.title);
+                return false;
+            }
+            target = target.parentNode;
+        }
+    }
+}
+
 function changeLgPhoto(href, title)
 {
     var lgImage = document.getElementById("lgImage");

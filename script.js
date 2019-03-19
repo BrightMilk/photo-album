@@ -90,3 +90,24 @@ function changeLgPhoto(href, title)
     lgImage.src = href;
     lgImageTitle.innerText = title;
 }
+
+function trimTitle(str)
+{
+    arr = str.split(" ");
+    for (word in arr)
+    {
+        if (arr[word].length <= 3)
+        {
+            //arr.splice(word, 1);
+            delete arr[word];
+        }
+    }
+    str = arr.join(' ');
+    console.log(arr);
+    return str;
+}
+
+document.addEventListener("DOMContentLoaded", function()
+{
+    createAlbum();
+});
